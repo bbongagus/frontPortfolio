@@ -20,10 +20,10 @@ const generatePreviewsArray = async() => {
         tempObj[key][propName] = value; 
         return tempObj;
     }
-        Object.keys(data).forEach(image => {
-        data = updObj(data, image, id(), "id");
+        // Object.keys(data).forEach(image => {
+        // data = updObj(data, image, id(), "id");
        //>> move tabs 
-    });
+    // });
     return data;
 }
 const addItem = (arr, newEntry) => [...arr, ...newEntry];

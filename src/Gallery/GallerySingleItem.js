@@ -2,9 +2,9 @@ import React from 'react';
 
 export default class GallerySingleItem extends React.Component {
     calculateStyle = () => {
-        const widthScreen = window.innerWidth/3 - 20;
+        const widthScreen = window.innerWidth/5 - 4;
         return {
-            height: window.innerHeight/3 -20 
+            // width: widthScreen
             // height: '200px',
             // backgroundImage: `url(${path})`,
             // backgroundSize: 'cover',
@@ -16,11 +16,12 @@ export default class GallerySingleItem extends React.Component {
     render() {
         let divStyle = this.calculateStyle();
         let path = this.props.previewPath;
+        const key = this.props.key;
         return (
 
 
             <div className='Gallery-Item'  >
-                <img src={path} style={divStyle} />
+                <img src={path} key={key} style={divStyle} />
             </div>
         )
     }
