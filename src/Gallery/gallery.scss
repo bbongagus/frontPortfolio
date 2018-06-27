@@ -53,10 +53,10 @@
     box-sizing: border-box;
     background-color: #ddd;
     position: relative;
-    width: 75%;
+    width: 100%;
     margin: auto;
     // overflow-y: auto;
-    margin-top: calc(7vh + 15px);
+    margin-top: calc(10vh + 15px);
     &:after{
         content:'';
         display: block;

@@ -7,6 +7,42 @@ body{
     font-family: 'Merriweather', serif;
     overflow-x: hidden;
 }
+.Home{
+    div{
+    background: url('https://pp.userapi.com/c846020/v846020632/1bd82/jXMM7GmZL5w.jpg');
+    width: 100wv;
+    height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    img{
+        height: '75%';
+        margin: auto;
+    }
+    h2{
+        top: 50%;
+        width: 100%;
+        font-size: 30px;
+        padding: 18px;
+        background-color: rgba(0,0,0,.5);
+        letter-spacing: 2px;
+
+        color: white;
+        font-weight: normal;
+        position: absolute;
+    }
+    position: relative;
+}
+    div#two{
+        background: url('http://s3.amazonaws.com/wallpapers2/wallpapers/images/000/000/582/thumb/andromeda_galaxy.jpg?1499899637');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    div#three{
+        background: url('http://s3.amazonaws.com/wallpapers2/wallpapers/images/000/000/500/thumb/03832_blandfordroad_3440x1440.jpg?1487671890');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+}
 .Navigation {
     background-color: #fff;
     position: fixed;
@@ -14,10 +50,9 @@ body{
     left: 0;
     z-index: 10;
     min-width: 100%;
-    // border-bottom: 1px solid rgba(#000, .1);
     text-align: center;
     padding: 15px 0;
-    height: 7vh;
+    height: 10vh;
     transition: all 0.1s ease-in;
     box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
     &-ScrollLine{
@@ -45,7 +80,7 @@ body{
     &-Element{
         font-family: 'Poppins', sans-serif;
         display: inline-block;
-        font-size: 13px;
+        font-size: 17px;
         line-height: 14px;
         text-decoration: none;
         margin: 5px 7px;
@@ -85,8 +120,11 @@ body{
     bottom: 0;
     left: 0;
     background-color: #fff;
+    background: none !important;
     z-index: 999;
+    height: auto !important;
     &-Link{
+        margin: 10px; 
         text-decoration: none;
         color: #000;
         outline: none;
@@ -98,6 +136,7 @@ body{
 }
 
 .Button{
+    margin: auto;
     font-size: 13px;
     padding: 8px 26px 6px;
     display: inline-block;
@@ -110,5 +149,7 @@ body{
     transition: background .2s, color .2s, border-color .2s;
     &:hover{
         background-color: lighten(#000, 20%);
+
     }
+    margin-bottom: 30px;
 }

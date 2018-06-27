@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './About.scss';
 import Modal from '../Modal/Modal';
+import Footer from '../footer';
 export default class About extends React.Component{
 
     constructor(props){
@@ -33,15 +34,20 @@ export default class About extends React.Component{
         )
         return (
             <div className="About">
-                <h1>Мы, студенты Московского политеха, Кресик Андрей и Бамба</h1>
-                <h2>Львы и профессионалы в области сайтостроения</h2>
-                <p className="lorem">Proident nisi eu tempor in occaecat minim. Pariatur culpa voluptate do minim enim nisi adipisicing reprehenderit dolore nostrud culpa irure mollit. In deserunt aliqua adipisicing cillum veniam. Deserunt exercitation occaecat in veniam sunt anim in mollit irure proident voluptate exercitation ut non. Ipsum et velit ea ad excepteur consequat.</p>
-                <button onClick={this.toggleModal} className="Button">Связаться</button>
+                <div className='top'>
+                <h1>Who we are?</h1>
+                </div>
+                <div className='About-Info'>
+
+                <h2>We are Moscow Polytech students. If you want to collaborate you can contact with us.</h2>
+                </div>
+                <button onClick={this.toggleModal} className="Button">Contact</button>
                 <Modal show={this.state.isOpen}
                     onClose={this.toggleModal}>
                     {contactForm()}
                 </Modal>
 
+                <Footer/>
             </div>
         )
     }

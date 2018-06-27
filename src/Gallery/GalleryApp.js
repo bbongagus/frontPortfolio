@@ -27,13 +27,15 @@ export default class Gallery extends React.Component{
         const items = Object.values(this.state.items);
         console.log('​Gallery -> render -> ', );
         if (items.length > 0){
-            const galleryItem = item => <GallerySingleItem previewPath={defaultPathToPreviews+item.preview} key={item.id}/>
+            const galleryItem = item => <GallerySingleItem pathToFull={defaultPathToImages+'/'+item.image} previewPath={defaultPathToPreviews+item.preview} key={item.id}/>
             const childs = items.map(item => galleryItem(item));
+            const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
+            const newChilds = shuffleArray(childs);
             return (<Masonry
                         className='Gallery'
                         elementType='div'
                         >
-                        {childs}
+                        {newChilds}
                     </Masonry>)
         }
         return false;
@@ -42,6 +44,7 @@ export default class Gallery extends React.Component{
     itsScrolling(){
         const header = document.querySelector('.Navigation');
         const headerHeader = document.querySelector('.Navigation-Header');
+        console.log('LOL');
         if (window.scrollY > 100){
             header.classList.add('Navigation--small');
             headerHeader.classList.add('Navigation-Header--small');
@@ -66,7 +69,6 @@ export default class Gallery extends React.Component{
     }
     componentWillUpdate(nextProps, nextState){
         
-        // const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
         
         /* Gets called as soon as the shouldComponentUpdate returned True and before render method. Any state changes via this.setState are not
         allowed as this method should be strictly used to prepare for an upcoming update not trigger an update itself */
@@ -91,52 +93,3 @@ export default class Gallery extends React.Component{
         /* Gets called before the component is removed from the DOM. Its can be beneficial when needing to perform clean up operations. */
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { getImagesFromServer } from './GalleryDataInterface';
-// const Gallery = () => {
-//     const items = this.state.items;
-//     return (
-//         <div className='Gallery'>
-//             {
-//                 items.map(value => <GallerySingleItem item={item} key={item.id}/>)
-//             }
-//         </div>
-//     )
-// }
-// export default class Gallery extends React.Component {
-//     constructor(props){
-//         super(props);
-//         getImagesFromServer().then(images => this.state = { items: images });
-//     }
-
-//     render(){
-//         let items = this.state.items;
-
-//         return (
-//             <div className='Gallery'>
-//                 {
-//                     items.map(
-//                         item => 
-//                             <GallerySingleItem item={item} key={item.id}/>
-//                     )
-//                 }
-//             </div>
-//         )
-//     }
-// }
